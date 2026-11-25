@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #061b36;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.pantalla {
+  position: relative;
+  width: min(100vw, 100vh, 1000px);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+.diseno {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Áreas transparentes alineadas con los botones dibujados en la imagen.
+   No agregan recuadros ni modifican el aspecto visual. */
+.acceso {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 10.5%;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.acceso:focus-visible {
+  outline: 3px solid rgba(255,255,255,.95);
+  outline-offset: 4px;
+}
+
+.acceso-uno { top: 47.5%; }
+.acceso-dos { top: 60%; }
+.acceso-tres { top: 72.5%; }
+
+@media (max-width: 520px) {
+  .pantalla {
+    width: 100vw;
+  }
+}
